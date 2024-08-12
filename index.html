@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus culpa
+      sapiente quibusdam aliquam eligendi neque sed dolorum autem? Accusantium
+      modi amet iure suscipit dicta alias nam maiores officia voluptatum
+      voluptatem!
+    </div>
+    
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script>
+    const root = document.getElementById("root");
+
+    if (root) {
+      const reactRoot = ReactDOM.createRoot(root);
+      const h4 = React.createElement("Hello", { key: '1' }, "nope");
+      const h5 = React.createElement("Hello", { key: '2' }, " hehe!");
+      const h3 = React.createElement("p", {}, [h4, h5]);
+
+      const h2 = React.createElement("h1", {}, h3);
+      const h1 = React.createElement("h1", {}, h2);
+
+      reactRoot.render(h1);
+    } else {
+      console.error("Root element not found");
+    }
+  </script>
+</html>
